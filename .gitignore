@@ -21,7 +21,7 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Compiled files
+# Generated classes
 *.class
 
 # Package files
@@ -31,6 +31,9 @@ Thumbs.db
 
 # Hibernate generated files
 *.java
+
+# Specific patterns to include EJB bean files
+!**/ejb/**/*.java
 
 # Application server specific files
 server-config/
@@ -44,15 +47,3 @@ lib/
 
 # Environment specific files
 .env
-
-# Ignore Eclipse's Core File
-.metadata
-
-# Ignore Generated classes
-*.class
-
-# Ignore Maven Directory
-target/
-
-# Specific patterns to include EJB bean files
-!**/ejb/**/*.java
