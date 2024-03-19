@@ -53,7 +53,7 @@ lib/
 .metadata
 
 # Ignore Generated classes
-*.class
+#*.class
 
 # Ignore Maven Directory
-target/
+#target/
