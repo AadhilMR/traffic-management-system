@@ -11,8 +11,4 @@ public interface DataPersister {
     void save(Vehicle vehicle);
 
     void save(TrafficIntersection trafficIntersection);
-
-    List<Vehicle> getVehiclesList(String date);
-
-    List<TrafficIntersection> getTrafficIntersectionsList(String date);
 }

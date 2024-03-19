@@ -24,47 +24,11 @@ public class DataPersistBean implements DataPersister {
     }
 
     @Override
-    public List<Vehicle> getVehiclesList(String date) {
-        try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-
-            String hql = "FROM Vehicle WHERE time LIKE :date";
-            Query query = session.createQuery(hql);
-            query.setParameter("date", date + "%");
-
-            List<Vehicle> vehicles = query.list();
-            session.close();
-            return vehicles;
-        } catch (NoResultException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    @Override
     public void save(TrafficIntersection trafficIntersection) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.persist(trafficIntersection);
         transaction.commit();
         session.close();
-    }
-
-    @Override
-    public List<TrafficIntersection> getTrafficIntersectionsList(String date) {
-        try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-
-            String hql = "FROM TrafficIntersection WHERE time LIKE :date";
-            Query query = session.createQuery(hql);
-            query.setParameter("date", date + "%");
-
-            List<TrafficIntersection> trafficIntersections = query.list();
-            session.close();
-            return trafficIntersections;
-        } catch (NoResultException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 }
