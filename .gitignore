@@ -39,10 +39,6 @@ server-config/
 .metadata/
 bin/
 
-# Gradle specific files
-.gradle/
-build/
-
 # Dependencies
 lib/
 
@@ -53,7 +49,10 @@ lib/
 .metadata
 
 # Ignore Generated classes
-#*.class
+*.class
 
 # Ignore Maven Directory
-#target/
+target/
+
+# Specific patterns to include EJB bean files
+!**/ejb/**/*.java
