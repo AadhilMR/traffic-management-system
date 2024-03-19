@@ -1,0 +1,59 @@
+# Maven specific files
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/maven-wrapper.jar
+!**/wrapper/
+*.iml
+
+# IntelliJ specific files
+.idea/
+*.iws
+*.ipr
+
+# Logs
+logs/
+*.log*
+
+# Temporary files
+*.tmp
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Compiled files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Hibernate generated files
+*.java
+
+# Application server specific files
+server-config/
+
+# IDE specific directories
+.metadata/
+bin/
+
+# Gradle specific files
+.gradle/
+build/
+
+# Dependencies
+lib/
+
+# Environment specific files
+.env
+
+# Ignore Eclipse's Core File
+.metadata
+
+# Ignore Generated classes
+*.class
+
+# Ignore Maven Directory
+target/
