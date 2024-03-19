@@ -1,0 +1,51 @@
+* {
+    font-family: "Segoe UI Light";
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px black solid;
+    margin: 0;
+    padding: 5px 15px;
+}
+
+td {
+    text-align: center;
+}
+
+.table-side-header {
+    text-align: start;
+    padding-left: 3px;
+    padding-right: 12px;
+}
+
+.table-side-header.header-1 {
+    background-color: #6e8dd2;
+}
+
+.table-side-header.header-2 {
+    background-color: #72f8b3;
+}
+
+.row {
+    display: flex;
+}
+
+.col-4 {
+    flex: 0 0 33.33%;
+}
+
+.col-8 {
+    flex: 0 0 66.67%;
+}
