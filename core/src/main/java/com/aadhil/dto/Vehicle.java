@@ -1,15 +1,29 @@
 package com.aadhil.dto;
 
 import com.aadhil.entity.Coordinates;
+import jakarta.persistence.*;
 
-import java.security.Timestamp;
-import java.time.Instant;
-import java.util.Date;
+import java.io.Serializable;
 
-public class Vehicle {
+@Entity
+@Table(name = "vehicle")
+public class Vehicle implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "speed")
     private int speed;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "latitude", column = @Column(name = "coordinates_latitude")),
+            @AttributeOverride(name = "longitude", column = @Column(name = "coordinates_longitude"))
+    })
     private Coordinates coordinates;
+
+    @Column(name = "time")
     private String time;
 
     public Long getId() {
