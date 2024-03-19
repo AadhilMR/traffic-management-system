@@ -1,6 +1,5 @@
 package com.aadhil.entity;
 
-import javax.swing.plaf.PanelUI;
 import java.io.Serializable;
 
 public class Coordinates implements Serializable {
