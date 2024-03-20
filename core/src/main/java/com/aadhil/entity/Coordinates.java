@@ -31,7 +31,11 @@ public class Coordinates implements Serializable, Comparable<Coordinates> {
 
     @Override
     public int compareTo(Coordinates coordinates) {
-        if(latitude == coordinates.getLatitude() && longitude == coordinates.getLatitude()) {
+        double latitudeDifference = Math.abs(this.latitude - coordinates.getLatitude());
+        double longitudeDifference = Math.abs(this.longitude - coordinates.getLongitude());
+        double tolerance = 1e-9;
+
+        if (latitudeDifference < tolerance && longitudeDifference < tolerance) {
             return 1;
         } else {
             return 0;
