@@ -42,7 +42,7 @@ public class DatabaseService {
         LocalDateTime dateTime = LocalDateTime.now();
 
         if(dateTime.getMinute() % 2 != 0) {
-            dateTime = dateTime.plusMinutes(1);
+            dateTime = dateTime.minusMinutes(1);
         }
 
         return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
