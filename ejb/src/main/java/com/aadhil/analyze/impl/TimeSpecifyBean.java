@@ -27,11 +27,11 @@ public class TimeSpecifyBean implements TimeSpecifier {
                     .parse(vehicle.getTime(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
                     .getHour();
 
-            if (hour >= 0 && hour < 6) {
+            if (hour < 6) {
                 hourGroup1.add(vehicle);
-            } else if (hour >= 6 && hour < 12) {
+            } else if (hour < 12) {
                 hourGroup2.add(vehicle);
-            } else if (hour >= 12 && hour < 18) {
+            } else if (hour < 18) {
                 hourGroup3.add(vehicle);
             } else {
                 hourGroup4.add(vehicle);

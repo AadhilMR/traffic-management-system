@@ -34,6 +34,6 @@ public class CongestionAnalyzerBean implements CongestionAnalyzer {
     }
 
     private double normalizeVehicleCount(int vehicleCount) {
-        return Math.min(1.0, vehicleCount/MAXIMUM_VEHICLE_COUNT);
+        return Math.min(1.0, (double) vehicleCount/MAXIMUM_VEHICLE_COUNT);
     }
 }
