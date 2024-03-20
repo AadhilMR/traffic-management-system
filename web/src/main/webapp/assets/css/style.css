@@ -20,6 +20,11 @@ td {
     padding: 5px 15px;
 }
 
+.traffic-intersection-table th,
+.traffic-intersection-table td {
+    border: none !important;
+}
+
 td {
     text-align: center;
 }
@@ -46,6 +51,33 @@ td {
     flex: 0 0 33.33%;
 }
 
+.col-6 {
+    flex: 0 0 50%;
+}
+
 .col-8 {
     flex: 0 0 66.67%;
+}
+
+.traffic-intersection-table .status-round {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.traffic-intersection-table .status-round.status-red {
+    background-color: red !important;
+    border: none !important;
+}
+
+.traffic-intersection-table .status-round.status-green {
+    background-color: green !important;
+    border: none !important;
+}
+
+.traffic-intersection-table .status-round.status-yellow {
+    background-color: orange !important;
+    border: none !important;
 }

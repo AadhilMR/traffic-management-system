@@ -39,11 +39,18 @@
         </thead>
         <tbody>
             <tr>
-                <th class="table-side-header header-2">Avg Speed (KmPH)</th>
-                <td>50</td>
-                <td>70</td>
-                <td>40</td>
-                <td>65</td>
+                <th class="table-side-header header-2">Avg Speed (KmPH) : Route A1</th>
+                <td id="r1_t1">0.0</td>
+                <td id="r1_t2">0.0</td>
+                <td id="r1_t3">0.0</td>
+                <td id="r1_t4">0.0</td>
+            </tr>
+            <tr>
+                <th class="table-side-header header-2">Avg Speed (KmPH) : Route A6</th>
+                <td id="r2_t1">0.0</td>
+                <td id="r2_t2">0.0</td>
+                <td id="r2_t3">0.0</td>
+                <td id="r2_t4">0.0</td>
             </tr>
         </tbody>
     </table>
@@ -59,7 +66,7 @@
         <div class="col-8">
             <%-- Route Details - Start --%>
             <h4>Route Details</h4>
-            <span>Start Point (A1): 7.4950278, 80.352666</span><br>
+            <span>Start Point (A1): 7.495028, 80.352666</span><br>
             <span>End Point (A1): 7.489311, 80.360923</span><br>
             <span>Start Point (A6): 7.492702, 80.364822</span><br>
             <span>End Point (A6): 7.484192, 80.359437</span><br>
@@ -71,26 +78,85 @@
             <h4>Traffic Patterns</h4>
             <table>
                 <thead>
-                <tr>
-                    <th class="table-side-header header-1">Time Period</th>
-                    <th>00:00-06:00</th>
-                    <th>06:00-12:00</th>
-                    <th>12:00-18:00</th>
-                    <th>18:00-00:00</th>
-                </tr>
+                    <tr>
+                        <th class="table-side-header header-1">Time Period</th>
+                        <th>00:00-06:00</th>
+                        <th>06:00-12:00</th>
+                        <th>12:00-18:00</th>
+                        <th>18:00-00:00</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th class="table-side-header header-2">Congestion Level</th>
-                    <td style="background-color: red;">Heavy</td>
-                    <td style="background-color: green;">Light</td>
-                    <td style="background-color: red;">Heavy</td>
-                    <td style="background-color: orange;">Normal</td>
-                </tr>
+                    <tr>
+                        <th class="table-side-header header-2">Congestion Level : Route A1</th>
+                        <td id="c_r1_t1">--</td>
+                        <td id="c_r1_t2">--</td>
+                        <td id="c_r1_t3">--</td>
+                        <td id="c_r1_t4">--</td>
+                    </tr>
+                    <tr>
+                        <th class="table-side-header header-2">Congestion Level : Route A6</th>
+                        <td id="c_r2_t1">--</td>
+                        <td id="c_r2_t2">--</td>
+                        <td id="c_r2_t3">--</td>
+                        <td id="c_r2_t4">--</td>
+                    </tr>
                 </tbody>
             </table>
             <%-- Traffic Patterns - End --%>
+
+            <%-- Traffic Color Light Status - Start --%>
+            <h4>Traffic Color Light Status</h4>
+            <div class="row">
+                <div class="col-6" style="text-align: center">
+                    <table class="traffic-intersection-table">
+                        <thead>
+                            <tr>
+                                <th colspan="3">Traffic Intersection 1 (T1)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id="tli_1_red" class="status-round"></div>
+                                </td>
+                                <td>
+                                    <div id="tli_1_yellow" class="status-round"></div>
+                                </td>
+                                <td>
+                                    <div id="tli_1_green" class="status-round"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-6" style="text-align: center">
+                    <table class="traffic-intersection-table">
+                        <thead>
+                        <tr>
+                            <th colspan="3">Traffic Intersection 2 (T2)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div id="tli_2_red" class="status-round"></div>
+                            </td>
+                            <td>
+                                <div id="tli_2_yellow" class="status-round"></div>
+                            </td>
+                            <td>
+                                <div id="tli_2_green" class="status-round"></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <%-- Traffic Color Light Status - End --%>
         </div>
     </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
