@@ -32,6 +32,12 @@
             <type>ejb-client</type>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.aadhil</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>

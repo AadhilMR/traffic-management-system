@@ -12,5 +12,6 @@
 
         <mapping class="com.aadhil.dto.Vehicle" />
         <mapping class="com.aadhil.dto.TrafficIntersection" />
+        <mapping class="com.aadhil.entity.AverageSpeed" />
     </session-factory>
 </hibernate-configuration>
