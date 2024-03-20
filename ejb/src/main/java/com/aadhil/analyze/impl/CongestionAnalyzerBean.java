@@ -6,34 +6,18 @@ import jakarta.ejb.Singleton;
 
 @Singleton
 public class CongestionAnalyzerBean implements CongestionAnalyzer {
-    private static final int MAXIMUM_SPEED = 200;
-    private static final int MAXIMUM_VEHICLE_COUNT = 100;
+    private static final int MAXIMUM_SPEED = 80;
 
     @Override
-    public CongestionLevel analyzeTrafficPattenr(double averageSpeed, int vehicleCount) {
-        double congestionScore = calculateCongestionScore(averageSpeed, vehicleCount);
+    public CongestionLevel analyzeTrafficPattenr(double averageSpeed) {
+        double congestionScore = averageSpeed/MAXIMUM_SPEED;
 
-        if(congestionScore >= 0.75) {
-            return CongestionLevel.HEAVY;
-        } else if(congestionScore >= 0.4) {
-            return CongestionLevel.NORMAL;
-        } else {
+        if(congestionScore >= 0.625) { // Speed is above 50 KmPH
             return CongestionLevel.LIGHT;
+        } else if(congestionScore >= 0.125) { // Speed is between 10-50 KmPH
+            return CongestionLevel.NORMAL;
+        } else { // Speed is below 10 KmPH
+            return CongestionLevel.HEAVY;
         }
-    }
-
-    private double calculateCongestionScore(double averageSpeed, int vehicleCount) {
-        double normalizedSpeed = normalizeSpeed(averageSpeed);
-        double normalizedVehicleCount = normalizeVehicleCount(vehicleCount);
-
-        return (normalizedSpeed + normalizedVehicleCount) / 2;
-    }
-
-    private double normalizeSpeed(double averageSpeed) {
-        return Math.min(1.0, averageSpeed/MAXIMUM_SPEED);
-    }
-
-    private double normalizeVehicleCount(int vehicleCount) {
-        return Math.min(1.0, (double) vehicleCount/MAXIMUM_VEHICLE_COUNT);
     }
 }
