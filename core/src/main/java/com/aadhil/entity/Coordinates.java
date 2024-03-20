@@ -2,7 +2,7 @@ package com.aadhil.entity;
 
 import java.io.Serializable;
 
-public class Coordinates implements Serializable {
+public class Coordinates implements Serializable, Comparable<Coordinates> {
     private Double latitude;
     private Double longitude;
 
@@ -27,5 +27,14 @@ public class Coordinates implements Serializable {
                 "latitude=" + latitude +
                 ", longitude=" + longitude +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Coordinates coordinates) {
+        if(latitude == coordinates.getLatitude() && longitude == coordinates.getLatitude()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
