@@ -16,8 +16,10 @@ public class CongestionAnalyzerBean implements CongestionAnalyzer {
             return CongestionLevel.LIGHT;
         } else if(congestionScore >= 0.125) { // Speed is between 10-50 KmPH
             return CongestionLevel.NORMAL;
-        } else { // Speed is below 10 KmPH
+        } else if(congestionScore > 0) { // Speed is below 10 KmPH
             return CongestionLevel.HEAVY;
+        } else {
+            return CongestionLevel.NULL;
         }
     }
 }
