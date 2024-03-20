@@ -29,12 +29,6 @@ Thumbs.db
 *.war
 *.ear
 
-# Hibernate generated files
-*.java
-
-# Specific patterns to include EJB bean files
-!**/ejb/**/*.java
-
 # Application server specific files
 server-config/
 
