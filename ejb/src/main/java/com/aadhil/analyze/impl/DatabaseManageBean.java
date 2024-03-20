@@ -41,12 +41,12 @@ public class DatabaseManageBean implements DatabaseManager {
     }
 
     @Override
-    public List<TrafficIntersection> getTrafficIntersectionsList(String date) {
+    public List<TrafficIntersection> getTrafficIntersectionsList(String time) {
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
 
-            return session.createQuery("SELECT t FROM TrafficIntersection t WHERE time LIKE :date", TrafficIntersection.class)
-                    .setParameter("date", date + "%")
+            return session.createQuery("SELECT t FROM TrafficIntersection t WHERE time = :time", TrafficIntersection.class)
+                    .setParameter("time", time)
                     .list();
         } catch (NoResultException e) {
             e.printStackTrace();
