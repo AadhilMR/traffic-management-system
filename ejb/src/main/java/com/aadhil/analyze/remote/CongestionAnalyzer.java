@@ -5,5 +5,5 @@ import jakarta.ejb.Remote;
 
 @Remote
 public interface CongestionAnalyzer {
-    CongestionLevel analyzeTrafficPattenr(double averageSpeed);
+    CongestionLevel analyzeTrafficPattern(double averageSpeed);
 }

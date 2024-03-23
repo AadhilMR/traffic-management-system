@@ -31,7 +31,7 @@ public class DataAnalyzeService {
             String key = entry.getKey();
             double averageSpeed = entry.getValue().getAvg_speed();
 
-            CongestionLevel level = congestionAnalyzer.analyzeTrafficPattenr(averageSpeed);
+            CongestionLevel level = congestionAnalyzer.analyzeTrafficPattern(averageSpeed);
 
             congestionLevelMap.put(key, level);
         }

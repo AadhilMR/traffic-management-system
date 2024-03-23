@@ -9,7 +9,7 @@ public class CongestionAnalyzerBean implements CongestionAnalyzer {
     private static final int MAXIMUM_SPEED = 80;
 
     @Override
-    public CongestionLevel analyzeTrafficPattenr(double averageSpeed) {
+    public CongestionLevel analyzeTrafficPattern(double averageSpeed) {
         double congestionScore = averageSpeed/MAXIMUM_SPEED;
 
         if(congestionScore >= 0.625) { // Speed is above 50 KmPH
